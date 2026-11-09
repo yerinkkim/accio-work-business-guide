@@ -1319,6 +1319,10 @@ function tg(ev,id){
   var WEEK = {en:{'월':'Mon','화':'Tue','수':'Wed','목':'Thu','금':'Fri','토':'Sat','일':'Sun'},
               zh:{'월':'一','화':'二','수':'三','목':'四','금':'五','토':'六','일':'日'},
               ja:{'월':'月','화':'火','수':'水','목':'木','금':'金','토':'土','일':'日'}};
+  var TITLE = {ko:'Accio Work 대외 교육용 실무 가이드',
+               en:'Accio Work External Training Guide',
+               zh:'Accio Work 对外培训实操指南',
+               ja:'Accio Work 社外研修用 実務ガイド'};
   var SKIP = {SCRIPT:1, STYLE:1, NOSCRIPT:1, CODE:1, PRE:1, TEXTAREA:1};
   var nodes = [], ready = false;
 
@@ -1350,6 +1354,7 @@ function tg(ev,id){
       it.n.nodeValue = lead + out + trail;
     }
     document.documentElement.lang = lang === 'ko' ? 'ko' : (lang === 'zh' ? 'zh-Hans' : (lang === 'ja' ? 'ja' : 'en'));
+    if (TITLE[lang]) document.title = TITLE[lang];
   }
 
   function setLang(lang){
